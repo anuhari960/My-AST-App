@@ -1,0 +1,1 @@
+This app automates the measurement and interpretation of antibiotic zones of inhibition based on CLSI M100 guidelines. It uses TensorFlow Lite for disk recognition and saves research data to a CSV Master Sheet for statistical analysis.
