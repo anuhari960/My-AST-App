@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="2dp"
+            app:layout_constraintTop_toTopOf="parent">
+            <Button android:id="@+id/btnLoadImage" android:layout_width="wrap_content" android:layout_height="38dp" android:text="📸 Load" android:textSize="10sp" app:backgroundTint="#009688"/>
+            <Spinner android:id="@+id/spOrganism" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1.2" android:backgroundTint="#FFFFFF"/>
+            <EditText android:id="@+id/etAstId" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="0.8" android:hint="ID" android:textColor="#FFFFFF" android:textSize="14sp"/>
+            <Button android:id="@+id/btnCalibrate" android:layout_width="wrap_content" android:layout_height="38dp" android:text="CAL" app:backgroundTint="#FF5252" android:textSize="10sp"/>
+            <Button android:id="@+id/btnView" android:layout_width="wrap_content" android:layout_height="38dp" android:text="VIEW" app:backgroundTint="#2196F3" android:textSize="10sp" android:visibility="gone"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/previewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            app:layout_constraintTop_toBottomOf="@id/topBar">
+            <ImageView android:id="@+id/ivPetriDish" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitCenter" />
+            <com.example.myastapp.ZoneOverlayView android:id="@+id/zoneOverlay" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            <FrameLayout android:id="@+id/zoomFrame" android:layout_width="180dp" android:layout_height="180dp" android:layout_gravity="top|end" android:layout_margin="5dp" android:elevation="10dp">
+                <ImageView android:id="@+id/ivZoom" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitCenter" />
+                <View android:id="@+id/zoomBorderView" android:layout_width="180dp" android:layout_height="180dp" android:layout_gravity="center" android:background="@drawable/zoom_border" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/previewContainer">
+            <TextView android:id="@+id/tvConsolidatedDisplay" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="6.0 mm" android:textAlignment="center" android:textSize="20sp" android:textColor="#FF5252" android:textStyle="bold" android:padding="2dp"/>
+            <LinearLayout android:id="@+id/calibrationControls" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:padding="4dp">
+                <Button android:id="@+id/btnMinus" android:layout_width="40dp" android:layout_height="40dp" android:text="-"/>
+                <SeekBar android:id="@+id/seekBarSize" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:max="100"/>
+                <Button android:id="@+id/btnPlus" android:layout_width="40dp" android:layout_height="40dp" android:text="+"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/researchControls" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="4dp" android:visibility="gone">
+                <Spinner android:id="@+id/spAntibiotic" android:layout_width="match_parent" android:layout_height="38dp" android:backgroundTint="#FFFFFF" android:layout_marginBottom="2dp"/>
+                <SeekBar android:id="@+id/seekBarZone" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="0"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2" android:layout_marginTop="2dp">
+                    <Button android:id="@+id/btnNextDisc" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1.4" android:text="Save &amp; Next ➡️" app:backgroundTint="#009688" android:textSize="12sp" android:layout_marginEnd="2dp"/>
+                    <Button android:id="@+id/btnUndoTop" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="0.6" android:text="Undo" app:backgroundTint="#F44336" android:textSize="12sp"/>
+                </LinearLayout>
+                <TableLayout android:id="@+id/tableHeader" android:layout_width="match_parent" android:layout_height="wrap_content" android:stretchColumns="*" android:background="#1976D2" android:layout_marginTop="4dp"/>
+                <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#FFFFFF">
+                    <TableLayout android:id="@+id/tableResults" android:layout_width="match_parent" android:layout_height="wrap_content" android:stretchColumns="*"/>
+                </HorizontalScrollView>
+                <Button android:id="@+id/btnEpidemView" android:layout_width="match_parent" android:layout_height="40dp" android:text="EPIDEMIOLOGICAL VIEW" android:textColor="#FFFFFF" android:textStyle="bold" app:backgroundTint="#455A64" android:layout_marginTop="4dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2" android:layout_marginTop="4dp">
+                    <Button android:id="@+id/btnAddToMaster" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:text="Master" app:backgroundTint="#FF9800" android:textSize="10sp" android:layout_marginEnd="2dp"/>
+                    <Button android:id="@+id/btnShareMaster" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:text="Share Excel" app:backgroundTint="#4CAF50" android:textSize="10sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

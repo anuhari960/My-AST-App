@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">My AST App</string>
+
+    <string-array name="enterobacterales_antibiotics">
+        <item>-- Select Antibiotic --</item>
+        <item>Ampicillin-Sulbactam (SAM) 10/10µg</item>
+        <item>Piperacillin-Tazobactam (PIT) 100/10µg</item>
+        <item>Cefazolin (CZ) 30µg - Urine</item>
+        <item>Ceftazidime (CAZ) 30µg</item>
+        <item>Ceftazidime-Clavulanic Acid (CAC) 30/10µg</item>
+        <item>Cefepime (CPM) 30µg</item>
+        <item>Cefoxitin (FOX) 30µg</item>
+        <item>Aztreonam (ATM) 30µg</item>
+        <item>Ertapenem (ETP) 10µg</item>
+        <item>Imipenem (IMP) 10µg</item>
+        <item>Meropenem (MEM) 10µg</item>
+        <item>Gentamicin (GEN) 10µg</item>
+        <item>Amikacin (AK) 30µg</item>
+        <item>Tobramycin (TOB) 10µg</item>
+        <item>Ciprofloxacin (CIP) 5µg</item>
+        <item>Levofloxacin (LE) 5µg</item>
+        <item>Norfloxacin (NOR) 10µg - Urine</item>
+        <item>Ofloxacin (OFX) 5µg</item>
+        <item>Tetracycline (TE) 30µg</item>
+        <item>Doxycycline (DO) 30µg</item>
+        <item>Cotrimoxazole (COT) 25µg</item>
+        <item>Nitrofurantoin (NIT) 300µg - Urine</item>
+        <item>Fosfomycin (FOS) 200µg - Urine</item>
+        <item>Imipenem-EDTA (IE)</item>
+    </string-array>
+
+    <string-array name="clsi_breakpoints_enterobacterales">
+        <item>SAM,15,11</item>
+        <item>PIT,25,20</item>
+        <item>CZ,15,14</item>
+        <item>CAZ,21,17</item>
+        <item>CAC,0,0</item>
+        <item>CPM,25,18</item>
+        <item>FOX,18,14</item>
+        <item>ATM,21,17</item>
+        <item>ETP,22,18</item>
+        <item>IMP,23,19</item>
+        <item>MEM,23,19</item>
+        <item>GEN,18,14</item>
+        <item>AK,20,16</item>
+        <item>TOB,17,12</item>
+        <item>CIP,26,21</item>
+        <item>LE,21,16</item>
+        <item>NOR,17,12</item>
+        <item>OFX,16,12</item>
+        <item>TE,15,11</item>
+        <item>DO,14,10</item>
+        <item>COT,16,10</item>
+        <item>NIT,17,14</item>
+        <item>FOS,16,12</item>
+        <item>IE,0,0</item>
+    </string-array>
+
+    <string-array name="staph_antibiotics">
+        <item>-- Select Antibiotic --</item>
+        <item>Penicillin (P) 10U</item>
+        <item>Cefoxitin (FOX) 30µg</item>
+        <item>Vancomycin (VA) 30µg</item>
+        <item>Linezolid (LZ) 30µg</item>
+        <item>Erythromycin (E) 15µg</item>
+        <item>Clindamycin (CD) 2µg</item>
+        <item>Gentamicin (GEN) 10µg</item>
+        <item>Tetracycline (TE) 30µg</item>
+        <item>Doxycycline (DO) 30µg</item>
+        <item>Ciprofloxacin (CIP) 5µg</item>
+        <item>Levofloxacin (LE) 5µg</item>
+        <item>Norfloxacin (NOR) 10µg - Urine</item>
+        <item>Cotrimoxazole (COT) 25µg</item>
+        <item>Chloramphenicol (C) 30µg</item>
+        <item>Nitrofurantoin (NIT) 300µg - Urine</item>
+    </string-array>
+
+    <string-array name="clsi_breakpoints_staph">
+        <item>P,29,28</item>
+        <item>FOX,22,21</item>
+        <item>VA,0,0</item>
+        <item>LZ,26,22</item>
+        <item>E,23,13</item>
+        <item>CD,21,14</item>
+        <item>GEN,15,12</item>
+        <item>TE,19,14</item>
+        <item>DO,16,12</item>
+        <item>CIP,21,15</item>
+        <item>LE,19,15</item>
+        <item>NOR,17,12</item>
+        <item>COT,16,10</item>
+        <item>C,18,12</item>
+        <item>NIT,17,14</item>
+    </string-array>
+</resources>
